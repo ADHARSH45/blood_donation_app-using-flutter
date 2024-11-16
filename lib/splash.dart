@@ -1,3 +1,4 @@
+import 'package:donate_blood/selectscreen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -5,6 +6,12 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Future.delayed(Duration(seconds: 3), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => SelectionScreen()),
+      );
+    });
     return Scaffold(
       backgroundColor: const Color.fromARGB(
           255, 255, 255, 255), // Background color of the splash screen
