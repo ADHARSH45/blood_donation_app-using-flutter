@@ -1,3 +1,5 @@
+import 'package:donate_blood/donateblood.dart';
+import 'package:donate_blood/requestblood.dart';
 import 'package:flutter/material.dart';
 
 class SelectionScreen extends StatelessWidget {
@@ -67,31 +69,6 @@ class SelectionScreen extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-// Dummy screens for Request Blood and Donate Blood
-class RequestBloodScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Request Blood')),
-      body: Center(
-        child: Text('Request Blood Screen'),
-      ),
-    );
-  }
-}
-
-class DonateBloodScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Donate Blood')),
-      body: Center(
-        child: Text('Donate Blood Screen'),
       ),
     );
   }
