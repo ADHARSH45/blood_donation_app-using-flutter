@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 
-class DonateBloodScreen extends StatelessWidget {
+class DonateBloodScreen extends StatefulWidget {
+  @override
+  _DonateBloodScreenState createState() => _DonateBloodScreenState();
+}
+
+class _DonateBloodScreenState extends State<DonateBloodScreen> {
+  DateTime? _selectedDate;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,17 +53,23 @@ class DonateBloodScreen extends StatelessWidget {
                 readOnly: true,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
-                  hintText: 'Select a date',
+                  hintText: _selectedDate == null
+                      ? 'Select a date'
+                      : '${_selectedDate!.day}/${_selectedDate!.month}/${_selectedDate!.year}',
                   suffixIcon: Icon(Icons.calendar_today),
                 ),
                 onTap: () async {
-                  DateTime? selectedDate = await showDatePicker(
+                  DateTime? pickedDate = await showDatePicker(
                     context: context,
-                    initialDate: DateTime.now(),
+                    initialDate: _selectedDate ?? DateTime.now(),
                     firstDate: DateTime(2000),
                     lastDate: DateTime.now(),
                   );
-                  // Handle selected date
+                  if (pickedDate != null) {
+                    setState(() {
+                      _selectedDate = pickedDate;
+                    });
+                  }
                 },
               ),
               SizedBox(height: 20),
