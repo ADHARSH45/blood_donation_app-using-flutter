@@ -1,4 +1,5 @@
 import 'package:donate_blood/home.dart';
+import 'package:donate_blood/selectiontwo.dart';
 import 'package:donate_blood/selectscreen.dart';
 import 'package:donate_blood/splash.dart';
 import 'package:flutter/material.dart';
@@ -19,8 +20,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Donate_Blood',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primaryColor: const Color.fromARGB(255, 255, 0, 0)),
-      home: SplashScreen(),
+      theme: ThemeData(
+        primarySwatch: Colors.red,
+      ),
+      home: SelectionScreenTwo(),
     );
   }
 }

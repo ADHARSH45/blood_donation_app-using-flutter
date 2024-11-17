@@ -13,6 +13,18 @@ class SplashScreen extends StatelessWidget {
       );
     });
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.red,
+        title: Center(
+          child: Text(
+            'DONTAE BLOOD...',
+            style: TextStyle(
+                color: const Color.fromARGB(255, 255, 255, 255),
+                fontSize: 25,
+                fontWeight: FontWeight.bold),
+          ),
+        ),
+      ),
       backgroundColor: const Color.fromARGB(
           255, 255, 255, 255), // Background color of the splash screen
       body: Center(
